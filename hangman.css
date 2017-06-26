@@ -1,0 +1,14 @@
+#wrap, #result-container {
+    margin: 20px auto;
+}
+
+.char {
+    float: left;
+    border:0.7px solid black;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0.5%;
+}
