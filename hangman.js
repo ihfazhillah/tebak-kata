@@ -1,9 +1,13 @@
-var secretWord = "hangman";
+var secretWord = "durian";
 var wordsGuessed = ["h", "b", "i", "n"];
 var chars;
+var life = 8;
+var gameOver = false;
 var secretWordLength = secretWord.length;
 var input = document.querySelector("input");
 var resultContainer = document.querySelector("#result-container");
+var lifeDisplay = document.querySelector("#life");
+var secretWordLengthDisplay = document.querySelector("#word-length");
 
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -19,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     chars = document.querySelectorAll(".char");
+    secretWordLengthDisplay.textContent = secretWordLength;
+
 });
 
 function showWordsGuessed(){
@@ -30,13 +36,32 @@ function showWordsGuessed(){
 }
 
 input.addEventListener("input", function(){
-    if(wordsGuessed.indexOf(this.value) !== -1){
-        alert("hey, kamu sudah tebak huruf ini");
-    } else {
-        if(this.value){
-            wordsGuessed.push(this.value);
-            showWordsGuessed();
+
+    if (life > 0){
+        if(wordsGuessed.indexOf(this.value) !== -1){
+            alert("hey, kamu sudah tebak huruf ini");
+            this.value = "";
+        } else if (secretWord.indexOf(this.value) === -1){
+        
+            life--;
+            if(life == 0){
+                gameOver = !gameOver;
+                input.setAttribute("disabled", "");
+            }
+            alert("Ayo lebih keras berpikir lagi, kesempatan kamu berkurang");
+            this.value = "";
+            lifeDisplay.textContent = life;
+            if(this.value){
+                wordsGuessed.push(this.value);
+            }
+        } else {
+            if(this.value){
+                wordsGuessed.push(this.value);
+                showWordsGuessed();
+            }
+            this.value = "";
         }
-        this.value = "";
+    } else {
+        gameOver = !gameOver;
     }
 });
