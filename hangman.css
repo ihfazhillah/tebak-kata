@@ -1,14 +1,76 @@
-#wrap, #result-container {
-    margin: 20px auto;
+body{
+    background: url("https://s-media-cache-ak0.pinimg.com/originals/d6/76/3b/d6763b5e9e748a001bf5da72e4459ce7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #b6d4e8;
+    min-height: 100%;
+    font-family: "Lato";
 }
 
+.container {
+    font-family: "Lato";
+    font-transform: uppercase;
+}
+
+
+html {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+}
+
+#wrap, #result-container, #word-guessed {
+    margin: 20px auto;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.judul {
+    color: #b6d4e8;
+    font-transform: uppercase;
+}
+
+
 .char {
-    float: left;
-    border:0.7px solid black;
-    width: 30px;
-    height: 30px;
+    border:0.5px solid black;
     margin: 5px;
     text-align: center;
     text-transform: uppercase;
-    padding-top: 0.5%;
+    font-size: 1em;
+    float: left;
+    padding: 15px;
+    background-color: #07081d;
+    color: #b6d4e8;
+    border-radius: 25px;
+    
+}
+
+.input-group {
+    max-width: 100px;
+    margin: auto;
+}
+
+.clear {
+    clear: left;
+}
+
+#life {
+    font-size: 1.5em;
+    max-width: 50px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+input {
+    font-size: 5rem;
+    height: 5rem;
+    width: 5rem;
+}
+
+#message{
+    color: red;
+    margin-top:10px;
 }

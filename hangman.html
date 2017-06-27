@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <title>Tebak Kata</title>
     <link rel="stylesheet" href="hangman.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 </head>
 <body>
 
-    <div id="wrap">
-        <h1>Game Tebak Kata</h1>
+    <div id="wrap" class="container">
 
-        <p>Hi, saya punya sebuah kata dengan jumlah huruf <span id="word-length">0</span> panjangnya. Coba tebak...! Kamu punya <span id="life">8</span> kesempatan</p>
-        <input type="text" pattern=".{1}" maxlength="1">
+        <div id="life" class="alert alert-success">8</div>
+        <h1 class="judul">Tebak Kata</h1>
+        <h3 class="judul">Kategori: Bulan Hijriah</h3>
+
+        <div class="clear"></div>
+        <p id="result-container">
+        </p>
+        
+        <div class="clear"></div>
+
+        <div class="input-group">
+            <input type="text" class="form-control" maxlength="1">
+            <span class="input-group-btn">
+                <button class="btn btn-default" id="reset" type="button">Reset!</button>
+            </span>
+        </div><!-- /input-group -->
+           <p id="message"></p>
+
     
-        <div id="result-container">
-        </div>
+
+        <h3 class="judul">Kata yang sudah kamu tebak</h3>
+        <p id="word-guessed">
+        </p>
+
 
     </div>
    <script type="text/javascript" src="hangman.js"></script>
